@@ -1,0 +1,44 @@
+
+{%extends 'layouts/default.html'%}
+
+{% block body %}
+<h1>COMMANDES EN COURS</h1>
+
+<section>
+		<table>
+		<tr>
+		<th class="haut">Nom Client</th>
+        <th class="haut">Numéro Commande</th>
+        <th class="haut">Début Commande</th>
+        <th class="haut">Fin Commande</th>
+        <th class="haut">Adresse Commande</th>
+		</tr>
+{{ content1 }}
+        </table>
+</section>
+
+<h1>COMMANDES DEJA HONOREES</h1>
+
+<section>
+		<table>
+		<tr>
+		<th class="haut">Nom Client</th>
+        <th class="haut">Numéro Commande</th>
+        <th class="haut">Début Commande</th>
+        <th class="haut">Fin Commande</th>
+        <th class="haut">Adresse Commande</th>
+		</tr>
+{{ content2 }}
+        </table>
+</section>
+
+<script>
+    $(".btnRejouer").click(function(){
+        let placeidp=String("."+"l"+$($(this).parent()).attr("l")+"c1")
+        boite=$(placeidp)
+        idp=jQuery(boite).text()
+        window.location.replace("http://127.0.0.1:5000/mesparties/rejouerpartie?idp="+idp+"&pseudo="+$(".identifiant").attr("pseudo"))
+    })
+</script>
+
+{% endblock %}

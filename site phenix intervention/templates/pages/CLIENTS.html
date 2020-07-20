@@ -1,0 +1,27 @@
+
+{%extends 'layouts/default.html'%}
+
+{% block body %}
+<h1>CLIENTS</h1>
+
+<section>
+		<table>
+		<tr>
+		<th class="haut">Nom</th>
+        <th class="haut">Matricule</th>
+        <th class="haut">Téléphone</th>
+        <th class="haut">Email</th>
+		</tr>
+{{ content }}
+        </table>
+</section>
+<script>
+    $(".btnRejouer").click(function(){
+        let placeidp=String("."+"l"+$($(this).parent()).attr("l")+"c1")
+        boite=$(placeidp)
+        idp=jQuery(boite).text()
+        window.location.replace("http://127.0.0.1:5000/mesparties/rejouerpartie?idp="+idp+"&pseudo="+$(".identifiant").attr("pseudo"))
+    })
+</script>
+
+{% endblock %}
